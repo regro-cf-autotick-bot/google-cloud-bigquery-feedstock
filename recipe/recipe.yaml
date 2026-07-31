@@ -1,6 +1,6 @@
 context:
   name: google-cloud-bigquery
-  version: "3.42.2"
+  version: "3.42.3"
 
 recipe:
   name: ${{ name|lower }}-split
@@ -8,7 +8,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name|replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: 08d4b264e5ee4790f719724c76b538f204b7190999328a2f1a6a95eaab74ca39
+  sha256: d03f8da5ed94aeae5457f3127216cb385392ba266bede25ea257aeec94512900
 
 build:
   number: 0
@@ -29,7 +29,7 @@ outputs:
         # bqstorage and pandas extras
         - pyarrow >=4.0.0
         # bqstorage extra
-        - google-cloud-bigquery-storage >=2.6.0,<3.0.0
+        - google-cloud-bigquery-storage >=2.29.0,<3.0.0
         # more restrictive constraint for py >=3.14
         - grpcio >=1.75.1,<2.0.0
         # pandas extra
@@ -53,8 +53,8 @@ outputs:
         - opentelemetry-sdk >=1.1.0
         - opentelemetry-instrumentation >=0.20b0
         # bigquery_v2 extra
-        - proto-plus >=1.22.3,<2.0.0
-        - protobuf >=3.20.2,<7.0.0,!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5
+        - proto-plus >=1.26.1,<2.0.0
+        - protobuf >= 6.33.5,<8.0.0
     tests:
       - python:
           imports:
